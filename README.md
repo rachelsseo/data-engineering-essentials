@@ -3,7 +3,7 @@
 ## DuckDB
 
 Install in your terminal:
-```
+```bash
 curl https://install.duckdb.org | sh
 ```
 
