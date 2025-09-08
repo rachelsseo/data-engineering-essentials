@@ -10,8 +10,7 @@ curl https://install.duckdb.org | sh
 Having trouble calling up DuckDB with a simple `duckdb` command? Find the full path to the program, and add it as an alias to your shell's resource file (`~/.bashrc` or `~/.zshrc`, etc.)
 
 ```
-# Alias below
-
+# alias below
 alias duckdb='/Users/nmagee/.local/bin/duckdb'
 ```
 Then open a new terminal and the simple command is available to you!
