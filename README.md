@@ -1,12 +1,23 @@
-# Data Formats
+# Data ETL/ELT/Lakes
 
-## CSV
+## DuckDB
 
-## Parquet
+Install in your terminal:
+```
+curl https://install.duckdb.org | sh
+```
 
-See the [parquet](parquet/) directory.
+## Data Formats
 
-## Avro
+### CSV
+
+### Parquet
+
+Parquet is a compressed, schema-embedded, column-formatted data file. See the [parquet](parquet/) directory for more.
+
+### Avro
+
+Avro is very similar to Parquet, but retains records in ROWs. It too is compressed and contains a schema.
 
 ## Data Sources
 
