@@ -8,10 +8,10 @@ pyarrow = "*"
 fastavro = "*"
 polars = "*"
 psutil = "*"
-duckdb = "*"
 pandas = "*"
 numpy = "*"
 matplotlib = "*"
+duckdb = "*"
 
 [dev-packages]
 
