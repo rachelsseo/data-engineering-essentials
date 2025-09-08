@@ -1,5 +1,7 @@
 # Extract Data
 
+Traditionally we used shell tools or language-based packages to fetch or move files to/from remote endpoints:
+
 - `curl`
 - `wget`
 - `requests`
@@ -11,6 +13,14 @@ Try it out:
 - https://d37ci6vzurychx.cloudfront.net/trip-data/yellow_tripdata_2025-01.parquet
 - https://s3.amazonaws.com/uvasds-systems/data/SAU-GLOBAL-1-v48-0.csv
 - s3://uvasds-systems/data/SAU-GLOBAL-1-v48-0.csv
+
+## DuckDB
+
+One of the most important, and novel capabilities of DuckDB is that it almost entirely removes a separate "E" (**extract**) step in data processing.
+
+This is because DuckDB can read most files even if they are remote. For simple analysis and read-only access, there is no need to actually retrieve the data file(s).
+
+When you want to write the data, either as a transformation or other cleaning, DuckDB can read the remote data and write the output to the destination of your choice. We will get to examples of that next week.
 
 ## View Schema
 
