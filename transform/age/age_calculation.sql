@@ -1,6 +1,4 @@
 SELECT 
-    id, 
-    first_name, 
     last_name, 
     birth_date,
     CASE 
@@ -9,11 +7,7 @@ SELECT
                  AND EXTRACT(DAY FROM CURRENT_DATE) >= EXTRACT(DAY FROM birth_date)) 
         THEN EXTRACT(YEAR FROM CURRENT_DATE) - EXTRACT(YEAR FROM birth_date)
         ELSE EXTRACT(YEAR FROM CURRENT_DATE) - EXTRACT(YEAR FROM birth_date) - 1 
-    END AS age_years,
-    address, 
-    city, 
-    state, 
-    zip_code 
+    END AS age_years
 FROM people 
 ORDER BY age_years DESC, last_name, first_name;
 
