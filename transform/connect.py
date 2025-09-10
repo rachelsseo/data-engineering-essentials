@@ -1,6 +1,8 @@
 import os
 import duckdb
 
+RDS_PASSWORD = os.getenv('RDS_PASSWORD')
+
 def connect():
     con = None
     try:
@@ -14,7 +16,7 @@ def connect():
             PORT 3306,
             DATABASE 'nem2p',
             USER 'admin',
-            PASSWORD ''
+            PASSWORD '{RDS_PASSWORD}'
         );
         """)
 
