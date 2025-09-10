@@ -197,9 +197,9 @@ Reshaping data by converting rows to columns or vice versa.
 
 ```sql
 -- Pivot: Convert monthly sales rows to columns (Northwind)
-SELECT p.CategoryID,
-       c.CategoryName,
-       SUM(CASE WHEN MONTH(o.OrderDate) = 1 THEN od.UnitPrice * od.Quantity ELSE 0 END) as Jan_Sales,
+SELECT p.category_id,
+       c.category_name,
+       SUM(CASE WHEN MONTH(o.OrderDate) = 1 THEN od.UnitPrice * od.quantity ELSE 0 END) as Jan_Sales,
        SUM(CASE WHEN MONTH(o.OrderDate) = 2 THEN od.UnitPrice * od.Quantity ELSE 0 END) as Feb_Sales,
        SUM(CASE WHEN MONTH(o.OrderDate) = 3 THEN od.UnitPrice * od.Quantity ELSE 0 END) as Mar_Sales,
        SUM(CASE WHEN MONTH(o.OrderDate) = 4 THEN od.UnitPrice * od.Quantity ELSE 0 END) as Apr_Sales
@@ -257,14 +257,14 @@ Cleaning and standardizing text data for consistent formatting.
 
 ```sql
 -- Clean and standardize text fields (Northwind)
-SELECT ProductID,
-       UPPER(TRIM(ProductName)) as clean_product_name,
-       CONCAT(TRIM(ProductName), ' - ', CategoryID) as product_with_category,
-       LENGTH(ProductName) as name_length,
+SELECT product_id,
+       UPPER(TRIM(product_name)) as clean_product_name,
+       CONCAT(TRIM(product_name), ' - ', category_id) as product_with_category,
+       LENGTH(product_name) as name_length,
        CASE 
-           WHEN ProductName LIKE '%Chocolate%' THEN 'Chocolate'
-           WHEN ProductName LIKE '%Cheese%' THEN 'Cheese'
-           WHEN ProductName LIKE '%Coffee%' THEN 'Beverage'
+           WHEN product_name LIKE '%Chocolate%' THEN 'Chocolate'
+           WHEN product_name LIKE '%Cheese%' THEN 'Cheese'
+           WHEN product_name LIKE '%Coffee%' THEN 'Beverage'
            ELSE 'Other'
        END as product_type
 FROM Products;
